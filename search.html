@@ -1,0 +1,119 @@
+<!-- FILEPATH: /c:/android/html5up-forty/search.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Mavens</title>
+    <style>
+        
+            body {
+                    background-color: rgb(131,124,185);
+            }
+                /* Center the title */
+                h1 {
+                    text-align: center;
+                }
+                
+                /* Style the search box */
+                .search-box {
+                    width: 50%;
+                    margin: 0 auto;
+                    text-align: center;
+                    background-color: rgb(131,124,185);
+                    padding: 20px;
+                }
+                
+                /* Style the search input */
+                .search-box input[type="text"] {
+                    width: 80%;
+                    padding: 10px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                }
+                
+                /* Style the search button */
+                .search-box button {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+                
+                /* Style the search button on hover */
+                .search-box button:hover {
+                    background-color: #3e8e41;
+                }
+
+                /* Style the clear button */
+                .search-box button.clear {
+                    background-color: #f44336;
+                    margin-left: 10px;
+                }
+
+                /* Style the clear button on hover */
+                .search-box button.clear:hover {
+                    background-color: #d32f2f;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Stock Mavens</h1>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+                <button class="clear" onclick="document.querySelector('.search-box input[type=text]').value=''">Clear</button>
+            <div id="suggestion-grid"></div>
+            <br>
+            <br>
+            <br>
+            <script>
+                // Define an array of random words
+                const words = [
+                    'apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape', 'honeydew', 'kiwi', 'lemon', 'mango', 'nectarine', 'orange', 'pear', 'quince', 'raspberry', 'strawberry', 'tangerine', 'watermelon'
+                ];
+
+                // Define the number of tiles to generate
+                const numTiles = 9;
+
+                // Get a reference to the suggestion grid element
+                const suggestionGrid = document.getElementById('suggestion-grid');
+
+                // Generate the tiles
+                for (let i = 0; i < numTiles; i++) {
+                    // Choose a random word from the array
+                    const word = words[Math.floor(Math.random() * words.length)];
+
+                    // Create a new tile element
+                    const tile = document.createElement('div');
+                    tile.classList.add('suggestion-tile');
+                    tile.textContent = word;
+
+                    // Add the tile to the suggestion grid
+                    suggestionGrid.appendChild(tile);
+                }
+            </script>
+
+            <style>
+                /* Style the suggestion tiles */
+                .suggestion-tile {
+                    display: inline-block;
+                    margin: 10px;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                }
+
+                /* Style the suggestion tiles on hover */
+                .suggestion-tile:hover {
+                    background-color: #f2f2f2;
+                }
+            </style>
+        </body>
+    </html>
